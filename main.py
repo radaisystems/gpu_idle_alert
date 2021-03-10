@@ -54,7 +54,8 @@ def get_gpu_last_active():
 def send_idle_notification():
   print("Sending message to slack.")
   ip_address = get_ip()
-  message = f'There has been no GPU activity on {ip_address} for at least {GPU_IDLE_THRESHOLD} minutes.'
+  hostname = socket.getfqdn()
+  message = f'There has been no GPU activity on {hostname} ({ip_address}) for at least {GPU_IDLE_THRESHOLD} minutes.'
   payload = {
     "username": "GPU Watch",
     "icon_emoji": ":rulebreaker:",
