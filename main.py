@@ -9,7 +9,7 @@ import urllib.request
 
 UTILIZATION_THRESHOLD = 0.01
 GPU_POLLING_ATTEMPTS = 3
-GPU_IDLE_THRESHOLD = 30 # Minutes
+GPU_IDLE_THRESHOLD = 60 # Minutes
 STATUS_FILE = '/tmp/gpu_utilization_notifier'
 SLACK_NOTIFICATION_URL = os.environ.get("SLACK_NOTIFICATION_URL", False)
 
